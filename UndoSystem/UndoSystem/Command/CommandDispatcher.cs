@@ -14,6 +14,8 @@ namespace UndoSystem.Command
 
         private Memento.Memento _savedState;
 
+        private object _lock = new object();
+
         private CommandDispatcher()
         {
             _commands = new Stack<Command>();
@@ -30,27 +32,33 @@ namespace UndoSystem.Command
 
         public void Add(Command command)
         {
-            _commands.Push(command);
+            lock (_lock)
+            {
+                _commands.Push(command);
+            }
         }
 
         public void Undo()
         {
-            if (_commands.Any())
-                _commands.Pop();
-
-            if (_savedState != null)
+            lock (_lock)
             {
-                _savedState.Restore();
-            }
+                if (_commands.Any())
+                    _commands.Pop();
 
-            if (_commands.Any())
-            {
-                var commands = _commands.ToArray().Reverse();
-                _commands.Clear();
-
-                foreach (var command in commands)
+                if (_savedState != null)
                 {
-                    command.Execute();
+                    _savedState.Restore();
+                }
+
+                if (_commands.Any())
+                {
+                    var commands = _commands.ToArray().Reverse();
+                    _commands.Clear();
+
+                    foreach (var command in commands)
+                    {
+                        command.Execute();
+                    }
                 }
             }
         }
