@@ -38,15 +38,15 @@ namespace UndoSystem.Command
             if (_commands.Any())
                 _commands.Pop();
 
+            if (_savedState != null)
+            {
+                _savedState.Restore();
+            }
+
             if (_commands.Any())
             {
                 var commands = _commands.ToArray().Reverse();
                 _commands.Clear();
-
-                if (_savedState != null)
-                {
-                    _savedState.Restore();
-                }
 
                 foreach (var command in commands)
                 {
