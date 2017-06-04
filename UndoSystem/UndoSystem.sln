@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoSystem", "UndoSystem\UndoSystem.csproj", "{07EC0C7B-FF96-4B88-987A-EB3B1277FE41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UndoSystem.Tests", "UndoSystem.Tests\UndoSystem.Tests.csproj", "{633376DF-7BF0-40A7-AFA2-CC4117253599}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07EC0C7B-FF96-4B88-987A-EB3B1277FE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07EC0C7B-FF96-4B88-987A-EB3B1277FE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07EC0C7B-FF96-4B88-987A-EB3B1277FE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07EC0C7B-FF96-4B88-987A-EB3B1277FE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633376DF-7BF0-40A7-AFA2-CC4117253599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633376DF-7BF0-40A7-AFA2-CC4117253599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633376DF-7BF0-40A7-AFA2-CC4117253599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633376DF-7BF0-40A7-AFA2-CC4117253599}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
